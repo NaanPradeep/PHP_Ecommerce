@@ -1,0 +1,64 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "63ea160ad920b6c7e6752089f9f51d21",
+    "packages": [
+        {
+            "name": "beanstream/beanstream",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bambora-na/beanstream-php.git",
+                "reference": "9a67a7ac32b69b55e008187e0f969351971065de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bambora-na/beanstream-php/zipball/9a67a7ac32b69b55e008187e0f969351971065de",
+                "reference": "9a67a7ac32b69b55e008187e0f969351971065de",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Beanstream": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Kulbakin",
+                    "email": "p.kulbakin@gmail.com"
+                },
+                {
+                    "name": "Kevin Saliba"
+                }
+            ],
+            "description": "Beanstream PHP API",
+            "support": {
+                "source": "https://github.com/bambora-na/beanstream-php/tree/master"
+            },
+            "time": "2018-11-29T00:39:21+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "beanstream/beanstream": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}

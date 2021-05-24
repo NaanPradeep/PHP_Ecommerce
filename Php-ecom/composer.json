@@ -1,0 +1,7 @@
+{
+    "name": "prady/php-ecom",
+    "description": "",
+    "require": {
+        "beanstream/beanstream": "dev-master"
+    }
+}

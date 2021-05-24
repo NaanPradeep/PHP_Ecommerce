@@ -1,0 +1,56 @@
+<?php 
+
+class ShipAddress {
+    public $db = null;
+
+    public function __construct(DBController $db) {
+        if(!isset($db)) {
+            return null;
+        }
+        $this->db = $db;
+    }
+
+    public function post_ship_address($data) {
+        if(isset($data) && isset($this->db->connect)) {
+            $address_owner = $data["address_owner"];
+            $street_no = $data["street_no"];
+            $street_name = $data["street_name"];
+            $town_name = $data["town_name"];
+            $city_name = $data["city_name"];
+            $pincode = $data["pincode"];
+            $country = $data["country"];
+
+            $sql = "INSERT INTO `shipping_address` (`address_owner`, `street_no`, `street_name`, `town_name`, `city_name`, `pincode`, `country`)
+                            VALUES ({$address_owner}, '{$street_no}', '{$street_name}', '{$town_name}', '{$city_name}', {$pincode}, '{$country}')";
+            $result = mysqli_query($this->db->connect, $sql);
+            if($result) {
+                header("Location: ship_address.php");
+            }
+        }
+
+    }
+
+    public function get_ship_address($address_owner) {
+        if(isset($address_owner) && isset($this->db->connect)) {
+            $sql = "SELECT * FROM `shipping_address` WHERE `address_owner` = {$address_owner}";
+            $query = mysqli_query($this->db->connect, $sql);
+            $result = array();
+
+            while($item = $query->fetch_array(MYSQLI_ASSOC)) {
+                $result[] = $item;
+            }
+            return $result;
+        }
+    }
+
+    public function get_ship_address_by_id($address_id) {
+        if(isset($address_id)) {
+            $sql = "SELECT * FROM `shipping_address` WHERE `address_id` = {$address_id} LIMIT 1";
+            $query = mysqli_query($this->db->connect, $sql);
+            $result = $query->fetch_array(MYSQLI_ASSOC);
+            if($result) {
+                return $result;
+            }
+        }
+    }
+}
